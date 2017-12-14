@@ -1,4 +1,4 @@
-package cn.rpm.eureka.user;
+package cn.rpm.sleuth;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class EurekaClientApplicationTests {
+public class SleuthServerApplicationTests {
 
 	@Test
 	public void contextLoads() {

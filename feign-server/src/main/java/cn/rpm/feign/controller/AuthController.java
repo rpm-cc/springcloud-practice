@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class AuthController {
-
     @Autowired
-    AuthService authService;
+    private AuthService authService;
     @RequestMapping(value = "/auth/info",method = RequestMethod.GET)
     public String info(){
         return authService.info();

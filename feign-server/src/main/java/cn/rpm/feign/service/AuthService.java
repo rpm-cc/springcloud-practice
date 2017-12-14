@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * Created by renpiming on 2017/11/23.
  */
-@FeignClient(value = "service-client",fallback = AuthServiceImpl.class)
+@FeignClient(value = "service-user",fallback = AuthServiceImpl.class)
 public interface AuthService {
 
     @RequestMapping(value = "/auth/info",method = RequestMethod.GET)

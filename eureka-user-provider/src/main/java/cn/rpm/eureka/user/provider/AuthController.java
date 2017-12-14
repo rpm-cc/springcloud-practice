@@ -1,8 +1,10 @@
 package cn.rpm.eureka.user.provider;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by renpiming on 2017/11/23.
@@ -11,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-
+    @Autowired
+    RestTemplate template;
 
     @RequestMapping("/info")
     public String info(){
@@ -32,6 +35,15 @@ public class AuthController {
         }
 
 
+    }
+
+    @RequestMapping("/default/goods")
+    public  String getDefaultGoods(){
+
+        String url = "http://localhost:8763/goods/book";
+        template.getForObject(url,String.class);
+
+        return template.getForObject(url,String.class);
     }
 
 }

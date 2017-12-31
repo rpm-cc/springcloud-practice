@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class AuthController {
+    //此处。默认注入的是注册服务中的实现@FeignClient(value = "service-user",fallback = AuthServiceImpl.class)
+    //fallback中的实现类是我们自己实现的，只有当出现问题的时候才会使用到。此时在idea中会提示出现多个bean。不能注入。但是不影响编译和使用
+    //我在设置中降低了检查级别。没有显示报错。
+    //作用：当我们启动多个eureka-user-provider 服务后。fegin 会自己进行运算然后选择一个服务器访问。（eureka中的service-user）
     @Autowired
     private AuthService authService;
     @RequestMapping(value = "/auth/info",method = RequestMethod.GET)

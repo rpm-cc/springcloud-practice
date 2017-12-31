@@ -1,4 +1,4 @@
-package cn.rpm.eureka.goods.provider;
+package cn.rpm.goods.provider;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

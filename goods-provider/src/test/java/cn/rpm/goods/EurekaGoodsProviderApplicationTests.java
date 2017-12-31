@@ -1,4 +1,4 @@
-package cn.rpm.eureka.goods;
+package cn.rpm.goods;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package cn.rpm.eureka.user.provider;
+package cn.rpm.user.provider;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

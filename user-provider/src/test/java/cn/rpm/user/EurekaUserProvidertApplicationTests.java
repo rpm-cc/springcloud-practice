@@ -1,4 +1,4 @@
-package cn.rpm.eureka.user;
+package cn.rpm.user;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

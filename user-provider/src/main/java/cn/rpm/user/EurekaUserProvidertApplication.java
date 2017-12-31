@@ -1,4 +1,4 @@
-package cn.rpm.eureka.user;
+package cn.rpm.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

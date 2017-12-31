@@ -1,4 +1,4 @@
-package cn.rpm.eureka.user;
+package cn.rpm.user;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,0 +1,28 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8776
+  #tomcat:
+  #  uri-encoding: utf-8
+spring:
+  application:
+    name: service-config
+  cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/rpm-cc/springcloudconfig/     # 配置git仓库的地址
+            search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+            username: jhon_smith@163.com                                        # git仓库的账号
+            password: rpm14343342
+        label: master
+#  http:
+#    encoding:
+#      charset: UTF-8
+#      enabled: true
+#      force: true
+#  messages:
+#    encoding: UTF-8
+#此处配置意图解决git中的配置文件中文属性乱码的问题。但是没有起到作用

@@ -1,9 +1,14 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8763
 spring:
   application:
     name: service-goods
+  profiles:
+    active: dev
+logging:
+  path: /Users/rpm/Desktop/logs
+#临时禁止安全策略。测试refresh
+management:
+ security:
+   enabled: false
+#management.security.enabled=false

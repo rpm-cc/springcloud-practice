@@ -36,8 +36,8 @@ demo 实现一些其spring boot和其他组件的整合</br>
 
 
 参考文献
-<a href="https://github.com/dyc87112/SpringBoot-Learning"> 程序猿DD-翟永超 的github</a>
-<a href="https://github.com/forezp">方志朋的 github</a>
-<a href="http://graphql.cn/learn/">graphql 中文文档</a>
-<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/">Spring Boot Reference Guide</a>
-<a href="http://www.baeldung.com/spring-graphql">Getting Started with GraphQL and Spring Boot</a>
+<a href="https://github.com/dyc87112/SpringBoot-Learning"> 程序猿DD-翟永超 的github</a></br>
+<a href="https://github.com/forezp">方志朋的 github</a></br>
+<a href="http://graphql.cn/learn/">graphql 中文文档</a></br>
+<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/">Spring Boot Reference Guide</a></br>
+<a href="http://www.baeldung.com/spring-graphql">Getting Started with GraphQL and Spring Boot</a></br>

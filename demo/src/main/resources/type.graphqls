@@ -1,0 +1,7 @@
+#定义数据类型
+type Student{
+   student_id:Int
+   name:String!
+   age:Int
+   sex:String!
+}

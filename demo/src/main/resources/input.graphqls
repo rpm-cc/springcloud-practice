@@ -1,0 +1,7 @@
+#定义输入类型，作为参数进行输入
+input StudentInput{
+  student_id:Int
+  name:String!
+  age:Int
+  sex:String!
+}

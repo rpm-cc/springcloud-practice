@@ -1,0 +1,20 @@
+server:
+  port: 8000
+#defined the url of graphql mapping
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+#defined debug page of the graphql ,we can debug api in this page
+graphiql:
+  mapping: /graphigl
+  enabled: true
+  endpoint: /graphql
+
+rabbitmq:
+spring:
+  rabbitmq:
+    port: 5672
+    host: localhost
+

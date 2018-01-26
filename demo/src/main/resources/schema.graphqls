@@ -1,0 +1,10 @@
+
+#defined the Query
+type Query{
+  findStudent:Student
+  findStudentById(student_id:Int):Student
+}
+#定义修改
+type Mutation{
+  updateStudent(student:StudentInput):Int
+}

@@ -15,7 +15,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.9.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <properties>
@@ -36,7 +36,11 @@
             <scope>test</scope>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
+        </dependency>
+        <!--######################################################################################################-->
         <!--Enable Graphql support-->
         <dependency>
             <groupId>com.graphql-java</groupId>
@@ -54,14 +58,41 @@
             <artifactId>graphql-java-tools</artifactId>
             <version>4.3.0</version>
         </dependency>
+        <!--######################################################################################################-->
+        <!--spring secutity, cas ,jwt  实现我们的安全验证-->
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!--cas client .filter ,redirect the request url to cas server -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-cas</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.unicon.cas</groupId>
+            <artifactId>cas-client-autoconfig-support</artifactId>
+            <version>1.2.0-GA</version>
+        </dependency>
+        <!--json web token-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.7.0</version>
+        </dependency>
 
+        <!--######################################################################################################-->
         <!--spring amqp with rabbit -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-
+        <!-- make the spring boot application auto deploy-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
 
     </dependencies>
 
@@ -70,6 +101,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork> <!-- Take effect the spring-boot-devtools -->
+                </configuration>
             </plugin>
         </plugins>
     </build>

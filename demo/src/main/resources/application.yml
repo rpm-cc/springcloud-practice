@@ -12,9 +12,27 @@ graphiql:
   enabled: true
   endpoint: /graphql
 
-rabbitmq:
 spring:
   rabbitmq:
     port: 5672
     host: localhost
+  application:
+    name: demo
 
+#cas configuration
+#cas:
+#  accept-any-proxy:
+#  allowed-proxy-chains:
+#  assertion-thread-local-url-patterns:
+#  authentication-url-patterns:
+#  client-host-url:
+#  gateway:
+#  proxy-callback-url:
+#  proxy-receptor-url:
+#  redirect-after-validation:
+#  request-wrapper-url-patterns:
+#  server-login-url:
+#  server-url-prefix:
+#  use-session:
+#  validation-type:
+#  validation-url-patterns:

@@ -11,4 +11,9 @@ logging:
 management:
  security:
    enabled: false
-#management.security.enabled=false
+#觉得也是一个坑。config-location这个属性配置在配置中心中没有起作用。放在这里好使了。
+#也许是因为指向的是一个路径的原因，但是mapper在配置中心中却是起作用的/
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+

@@ -5,9 +5,9 @@ import cn.rpm.goods.bean.Goods;
 import cn.rpm.goods.exception.IlegalParamsException;
 import cn.rpm.goods.exception.RestIlegalParamsException;
 import cn.rpm.goods.mapper.GoodsMapper;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.ApiImplicitParam;
+//import io.swagger.annotations.ApiImplicitParams;
+//import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class BooksController {
     GoodsMapper goodsMapper;
 
     //实验返回Book对象的json字符串
-    @ApiOperation(value = "获取一本书的几本信息", notes = "获取默认的信息",httpMethod = "GET")
+    //@ApiOperation(value = "获取一本书的几本信息", notes = "获取默认的信息",httpMethod = "GET")
     @RequestMapping(value = "/book",method = RequestMethod.GET)
     public Book books() {
         Book book = new Book();
@@ -50,8 +50,8 @@ public class BooksController {
     }
 
     //实验@PathVariable 路径参数
-    @ApiOperation(value = "获取一个商品的基本信息", notes = "一个商品的基本信息",httpMethod = "GET")
-    @ApiImplicitParam(name = "id", value = "商品id", required = true, dataType = "int")
+//    @ApiOperation(value = "获取一个商品的基本信息", notes = "一个商品的基本信息",httpMethod = "GET")
+//    @ApiImplicitParam(name = "id", value = "商品id", required = true, dataType = "int")
     @RequestMapping(value = "/{id}")
     public Goods goods(@PathVariable int id) {
         Goods goods = new Goods();
@@ -62,11 +62,11 @@ public class BooksController {
 
     //实验从参数中直接传一个对象过来
     //?id=100&type=book
-    @ApiOperation(value = "向数据库中插入一个商品的基本信息", notes = "带有事物的数据库操作",httpMethod = "GET")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "商品id", required = true, dataType = "int"),
-            @ApiImplicitParam(name = "type", value = "商品类型", required = true, dataType = "String")
-    })
+//    @ApiOperation(value = "向数据库中插入一个商品的基本信息", notes = "带有事物的数据库操作",httpMethod = "GET")
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "id", value = "商品id", required = true, dataType = "int"),
+//            @ApiImplicitParam(name = "type", value = "商品类型", required = true, dataType = "String")
+//    })
     @Transactional
     @RequestMapping(value = "/add")
     public Goods addGoods(@ModelAttribute Goods goods) {
@@ -75,7 +75,7 @@ public class BooksController {
         goodsMapper.insert("type3");
         return goods;
     }
-    @ApiOperation(value = "测试统一异常处理", notes = "json形式返回异常信息",httpMethod = "GET")
+//    @ApiOperation(value = "测试统一异常处理", notes = "json形式返回异常信息",httpMethod = "GET")
     @RequestMapping(value = "ex")
     public String ex(@RequestParam String ex) throws RestIlegalParamsException {
         if (ex.equals("ex")) {
@@ -83,7 +83,7 @@ public class BooksController {
         }
         return ex;
     }
-    @ApiOperation(value = "根据id查找商品", notes = "在url中拼上int类型的商品id",httpMethod = "GET")
+//    @ApiOperation(value = "根据id查找商品", notes = "在url中拼上int类型的商品id",httpMethod = "GET")
     @RequestMapping(value = "/get/{id}")
     public Goods getGoodsById(@PathVariable int id) {
 

@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class GoodsProviderApplicationTests {
@@ -23,6 +27,13 @@ public class GoodsProviderApplicationTests {
         user.setAge(33);
         mapper.insert(user);
 
+
+    }
+
+    @Test
+    public void testCollection(){
+
+        
 
     }
 

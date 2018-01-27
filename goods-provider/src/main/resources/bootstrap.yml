@@ -1,4 +1,4 @@
-
+#此处的配置，当时我写在了application.yml中，存在的问题就是属性文件中类似与a.b的属性拿不到
 spring:
   cloud:
     config:

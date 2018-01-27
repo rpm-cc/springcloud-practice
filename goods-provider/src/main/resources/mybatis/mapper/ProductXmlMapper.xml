@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.rpm.goods.mapper.ProductXmlMapper">
+
+    <resultMap id="productMap" type="Product">
+        <id property="pID" column="id"/>
+        <result property="pName" column="name"/>
+        <result property="pDescribe" column="_describe"/>
+        <result property="pDay" column="pro_day"/>
+        <result property="pFactory" column="factory"/>
+        <result property="pPrice" column="price"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="Product" useGeneratedKeys="true" keyProperty="pID">
+        insert into _product (name,factory,_describe,price) VALUES (#{pName},#{pFactory},#{pDescribe},#{pPrice});
+    </insert>
+
+    <select id="findProductById" parameterType="int" resultMap="productMap">
+       SELECT  id ,name, factory,_describe,pro_day,price from _product where id =#{pID};
+    </select>
+
+    <update id="setPriceById" parameterType="Product">
+        UPDATE _product set price=#{pPrice} where id = #{pID};
+    </update>
+
+</mapper>

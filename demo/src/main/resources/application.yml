@@ -18,7 +18,17 @@ spring:
     host: localhost
   application:
     name: demo
-
+security:
+  basic:
+    enabled: true
+  cas:
+    server:
+      base-url: https://test-user.aobei.com/cas   #cas服务器地址
+    service:
+      resolution-mode: dynamic
+    user:
+      roles-attributes:
+      - roles
 #cas configuration
 #cas:
 #  accept-any-proxy:

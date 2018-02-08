@@ -42,9 +42,39 @@ public class WebLogAspect {
         logger.info("RESPONSE : " + ret);
     }
 
-//    @Around("webLog()")
-//    public void around(ProceedingJoinPoint pjp) throws Throwable {
-//        pjp.proceed();
-//    }
+    @Around("webLog()")
+    public void around(ProceedingJoinPoint pjp) throws Throwable {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = attributes.getRequest();
+        StringBuilder stringBuilder  = new StringBuilder();
+        Object[] objects = pjp.getArgs();
+        boolean hasUser=false;
+//        if(objects!=null && objects.length>0){
+//            CasAuthenticationToken casToken = null;
+//            for (Object o:objects){
+//                if(o instanceof  CasAuthenticationToken){
+//                    casToken = (CasAuthenticationToken)o;
+//                    String user = casToken.getUserDetails().getUsername();
+//                    String role = casToken.getUserDetails().getAuthorities().toString();
+//                    stringBuilder.append("RQUEST_USER:"+user+"  REQUEST_USER_ROLE:"+role+"\n");
+//                    hasUser=true;
+//                }
+//
+//            }
+//        }
+        if (!hasUser){
+            stringBuilder.append("RQUEST_USER:unknown  REQUEST_USER_ROLE:unknown\n");
+        }
+        stringBuilder.append("URL : " + request.getRequestURL().toString()+"\n");
+        stringBuilder.append("HTTP_METHOD : " + request.getMethod()+"\n");
+        stringBuilder.append("IP : " + request.getRemoteAddr()+"\n");
+        stringBuilder.append("REQUEST_PARAMETERS"+request.getParameterMap().toString()+"\n");
+        stringBuilder.append("CLASS_METHOD : " + pjp.getSignature().getDeclaringTypeName() + "." + pjp.getSignature().getName());
+        logger.info(stringBuilder.toString());
+        pjp.proceed();
+        logger.info("out aop ");
+
+
+    }
 
 }

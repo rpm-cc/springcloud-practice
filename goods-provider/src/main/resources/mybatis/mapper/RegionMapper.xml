@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.rpm.goods.mapper.RegionMapper">
+
+    <insert id="insert" parameterType="cn.rpm.goods.bean.Region" useGeneratedKeys="true" keyProperty="region_id">
+        insert into region (name,pid,status,level,hot) values (#{name},#{pid},#{status},#{level},#{hot});
+    </insert>
+
+    <select id="getOne" parameterType="int" resultType="cn.rpm.goods.bean.Region">
+      SELECT
+       region_id,
+       name,
+       pid,
+       status,
+       level,
+       hot
+	   FROM region
+	   WHERE region_id = #{id}
+    </select>
+
+    <select id="list" parameterType="map" resultType="cn.rpm.goods.bean.Region">
+
+      SELECT region_id,
+       name,
+       pid,
+       status,
+       level,
+       hot
+	   FROM region
+
+       limit #{start},#{lenth}
+
+    </select>
+
+</mapper>

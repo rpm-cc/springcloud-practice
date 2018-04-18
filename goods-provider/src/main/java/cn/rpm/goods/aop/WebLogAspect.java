@@ -43,7 +43,7 @@ public class WebLogAspect {
     }
 
     @Around("webLog()")
-    public void around(ProceedingJoinPoint pjp) throws Throwable {
+    public Object around(ProceedingJoinPoint pjp) throws Throwable {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         StringBuilder stringBuilder  = new StringBuilder();
@@ -71,9 +71,9 @@ public class WebLogAspect {
         stringBuilder.append("REQUEST_PARAMETERS"+request.getParameterMap().toString()+"\n");
         stringBuilder.append("CLASS_METHOD : " + pjp.getSignature().getDeclaringTypeName() + "." + pjp.getSignature().getName());
         logger.info(stringBuilder.toString());
-        pjp.proceed();
+        Object object = pjp.proceed();
         logger.info("out aop ");
-
+        return object;
 
     }
 
